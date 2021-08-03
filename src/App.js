@@ -37,7 +37,7 @@ function App() {
             }}
             onClick={() => setInputOpen(!inputOpen)}
           >
-            Sprint Open House
+            Sprint Open House 2021
           </h1>
 
           {inputOpen && (
