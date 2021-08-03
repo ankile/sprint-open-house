@@ -8,7 +8,9 @@ function App() {
       style={{
         height: "100vh",
         width: "100vw",
-        backgroundColor: "#fff",
+        backgroundImage: "url(https://sprint.no/assets/footer-shape.svg)",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "bottom",
       }}
     >
       <div
