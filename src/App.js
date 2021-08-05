@@ -24,14 +24,21 @@ function App() {
         <h1
           style={{
             color: "#854c9d",
-            fontSize: "2.5em",
+            fontSize: "2.2em",
             cursor: "pointer",
             userSelect: "none",
+            textTransform: "uppercase",
+            marginBottom: "-0.5em",
           }}
           onClick={() => setInputOpen(!inputOpen)}
         >
-          Sprint Open House Annual Dart Competition '21
+          Sprint Open House
         </h1>
+        <h2
+          style={{ marginBottom: "1.5em", color: "#555", fontStyle: "italic" }}
+        >
+          Annual Dart Competition '21
+        </h2>
         <div
           style={{
             backgroundColor: "white",
@@ -106,7 +113,7 @@ function App() {
             }}
           >
             {Object.keys(people).length < 1 ? (
-              "Legg til spillere i boksen over"
+              "Legg til resultater i boksene over"
             ) : (
               <table
                 style={{
