@@ -60,7 +60,7 @@ function App() {
                     [Object.keys(people).length]: {
                       id: Object.keys(people).length,
                       name: e.target.person.value,
-                      score: e.target.score.value,
+                      score: Number(e.target.score.value),
                     },
                   });
                   e.target.person.value = "";
