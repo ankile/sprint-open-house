@@ -10,3 +10,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+input:not([type="submit"]) {
+  padding: 0.5em;
+  border-radius: 0;
+  outline-style: none;
+  border: 1px solid darkgray;
+}
+
+input:focus:not([type="submit"]) {
+  border-radius: 0;
+  outline-style: none;
+  border: 1px solid #854c9d;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  background-color: white;
+  border: 1px solid #854c9d;
+  color: #854c9d;
+  border-radius: 0;
+}
+
+input[type="submit"]:hover {
+  background-color: #854c9d;
+  border: 1px solid #854c9d;
+  color: white;
+}

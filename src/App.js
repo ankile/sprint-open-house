@@ -21,6 +21,17 @@ function App() {
           padding: "1em",
         }}
       >
+        <h1
+          style={{
+            color: "#854c9d",
+            fontSize: "2.5em",
+            cursor: "pointer",
+            userSelect: "none",
+          }}
+          onClick={() => setInputOpen(!inputOpen)}
+        >
+          Sprint Open House Annual Dart Competition '21
+        </h1>
         <div
           style={{
             backgroundColor: "white",
@@ -30,36 +41,61 @@ function App() {
             borderRadius: "20px",
           }}
         >
-          <h1
-            style={{
-              color: "#854c9d",
-              fontSize: "3.5em",
-              cursor: "pointer",
-              userSelect: "none",
-            }}
-            onClick={() => setInputOpen(!inputOpen)}
-          >
-            Sprint Open House 2021
-          </h1>
-
+          <h2>{inputOpen ? "Foreløpig poengtabell" : "Resultat"}</h2>
           {inputOpen && (
             <div>
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  console.log(e);
                   setPeople({
                     ...people,
                     [Object.keys(people).length]: {
                       id: Object.keys(people).length,
-                      name: e.target[0].value,
-                      score: 0,
+                      name: e.target.person.value,
+                      score: e.target.score.value,
                     },
                   });
-                  e.target[0].value = "";
+                  e.target.person.value = "";
+                  e.target.score.value = "";
                 }}
               >
-                <input name="peopleInput" />
-                <input type="submit" value="Legg til" />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      width: "fit-content",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <label style={{ textAlign: "left", paddingRight: "1em" }}>
+                        Deltakernavn
+                        <br />
+                        <input name="person" />
+                      </label>
+                      <label style={{ textAlign: "left" }}>
+                        Poengsum
+                        <br />
+                        <input type="number" name="score" />
+                      </label>
+                    </div>
+                    <input type="submit" value="Legg til resultat" />
+                  </div>
+                </div>
               </form>
             </div>
           )}
